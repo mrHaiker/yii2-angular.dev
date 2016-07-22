@@ -46,5 +46,7 @@
     <!-- Подключаем модули приложения -->
     <script src="app.js"></script>
     <script src="controllers/site.js"></script>
+    <script src="models/film.js"></script>
+    <script src="controllers/film.js"></script>
 </body>
 </html>
