@@ -1,4 +1,6 @@
-RewriteEngine on
+RewriteCond %{REQUEST_URI} ^/.*
 
-RewriteCond %{REQUEST_URI} .*
 RewriteRule ^(.*)$ client/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ client

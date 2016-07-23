@@ -8,7 +8,6 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'K3eOwvwRmAtL842dlzvH1j_X4wGyDwUb',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
@@ -46,6 +45,7 @@ $config = [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                ['pattern' => '', 'route' => 'site/index'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'film'],
             ],
         ],

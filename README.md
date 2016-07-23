@@ -1,3 +1,13 @@
 # yii2-angular.dev
-init
+
+####config
 Доменное имя сервера настроено на папку /server/web
+
+init
+---
+```
+cd server
+composer install
+cd ../client
+bower install
+```
