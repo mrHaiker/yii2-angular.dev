@@ -26,6 +26,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#/"><i class="glyphicon glyphicon-home"></i> Главная</a></li>
                 <li><a href="#/film/index"><i class="glyphicon glyphicon-film"></i> Каталог фильмов</a></li>
+                <li><a href="#/user"><i class="glyphicon glyphicon-user"></i> Пользователь</a></li>
             </ul>
         </div>
     </nav>
@@ -35,7 +36,7 @@
     </div>
 
     <footer class="text-center">
-        <p>Работает на Yii 2.0.4 и AngularJs 1.3.15</p>
+        <p> Yii 2.0.4 и AngularJs 1.5.7</p>
     </footer>
 
     <script src="assets/jquery/dist/jquery.min.js"></script>
@@ -43,10 +44,12 @@
     <!-- Подключаем AngularJS -->
     <script src="assets/angular/angular.min.js"></script>
     <script src="assets/angular-route/angular-route.min.js"></script>
+    <script src="assets/angular-resource/angular-resource.min.js"></script>
     <!-- Подключаем модули приложения -->
     <script src="app.js"></script>
     <script src="controllers/site.js"></script>
     <script src="models/film.js"></script>
     <script src="controllers/film.js"></script>
+    <script src="controllers/user.js"></script>
 </body>
 </html>
