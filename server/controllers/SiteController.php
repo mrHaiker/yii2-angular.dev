@@ -2,12 +2,14 @@
 
 namespace app\controllers;
 
+use app\models\RegisterForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\web\ServerErrorHttpException;
 
 class SiteController extends Controller
 {
@@ -121,5 +123,22 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionRegister()
+    {
+        $model = new RegisterForm();
+
+        if($model->load(\Yii::$app->request->post()) && $model->validate()) {
+            if($model->register()) {
+                return $this->goHome();
+            }
+            else {
+                throw new ServerErrorHttpException('Register failed for unknown reason.');
+            }
+        }
+        return $this->render('register', [
+            'model' => $model,
+        ]);
     }
 }
