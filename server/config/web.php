@@ -47,6 +47,7 @@ $config = [
             'rules' => [
                 ['pattern' => '', 'route' => 'site/index'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'film'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'user'],
             ],
         ],
     ],

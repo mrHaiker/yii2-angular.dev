@@ -131,6 +131,7 @@ class SiteController extends Controller
 
         if($model->load(\Yii::$app->request->post()) && $model->validate()) {
             if($model->register()) {
+                die('go home');
                 return $this->goHome();
             }
             else {
