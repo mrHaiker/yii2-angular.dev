@@ -47,8 +47,11 @@
     <script src="assets/angular-resource/angular-resource.min.js"></script>
     <!-- Подключаем модули приложения -->
     <script src="app.js"></script>
-    <script src="controllers/site.js"></script>
+    <!-- Модели -->
     <script src="models/film.js"></script>
+    <script src="models/User.js"></script>
+
+    <script src="controllers/site.js"></script>
     <script src="controllers/film.js"></script>
     <script src="controllers/user.js"></script>
 </body>

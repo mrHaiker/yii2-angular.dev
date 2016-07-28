@@ -9,17 +9,32 @@ yii2AngApp_user.config( function ($routeProvider) {
             templateUrl: 'views/user/reg.html',
             controller: 'registerUserCtrl'
         })
+        .when('/user/login', {
+            templateUrl: 'views/user/login.html',
+            controller: 'loginUserCtrl'
+        })
 
 });
 yii2AngApp_user.controller('mainUserCtrl', function ($scope) {
     $scope.msg = 'controller connect';
 });
 
-yii2AngApp_user.controller('registerUserCtrl', function ($scope) {
+yii2AngApp_user.controller('registerUserCtrl', function ($scope, User) {
     $scope.msg = 'done'
     $scope.data = {}
     $scope.register = function () {
-        alert('register')
         console.log($scope.data)
+        if($scope.data.password == $scope.data.cpassword) {
+            User.register($scope.data, function (data, req) {
+                console.log(req);
+            })
+        }
+    }
+});
+
+yii2AngApp_user.controller('loginUserCtrl', function ($scope) {
+    $scope.data = {};
+    $scope.login = function () {
+        console.log($scope.data);
     }
 });
