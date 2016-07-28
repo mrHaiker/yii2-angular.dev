@@ -50,6 +50,9 @@
     <!-- Модели -->
     <script src="models/film.js"></script>
     <script src="models/User.js"></script>
+    <script src="models/AuthInterceptor.js"></script>
+
+
 
     <script src="controllers/site.js"></script>
     <script src="controllers/film.js"></script>

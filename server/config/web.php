@@ -9,6 +9,8 @@ $config = [
     'components' => [
         'request' => [
             'cookieValidationKey' => 'K3eOwvwRmAtL842dlzvH1j_X4wGyDwUb',
+            'enableCsrfValidation' => true,
+            'enableCookieValidation' => false,
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],
@@ -19,6 +21,8 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => null,
+            'enableSession' => false
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

@@ -26,15 +26,20 @@ yii2AngApp_user.controller('registerUserCtrl', function ($scope, User) {
         console.log($scope.data)
         if($scope.data.password == $scope.data.cpassword) {
             User.register($scope.data, function (data, req) {
-                console.log(req);
+                console.log(data);
             })
         }
     }
 });
 
-yii2AngApp_user.controller('loginUserCtrl', function ($scope) {
+yii2AngApp_user.controller('loginUserCtrl', function ($scope, User, $window, $location) {
     $scope.data = {};
     $scope.login = function () {
-        console.log($scope.data);
+        User.login($scope.data, function (data, req) {
+            console.log(req);
+            console.info(data);
+            $window.localStorage.access_key = data.access_token;
+            $location.path('/client/').replace();
+        })
     }
 });

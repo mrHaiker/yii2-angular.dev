@@ -28,13 +28,11 @@ yii2AngApp_film.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/film/index.html',
             controller: 'delete',
         })
-        .otherwise({
-            redirectTo: '/film/index'
-        });
+        
 }]);
 
-yii2AngApp_film.controller('index', ['$scope', '$http', 'services',
-    function($scope,$http,services) {
+yii2AngApp_film.controller('index', ['$scope', '$http', 'services', '$route',
+    function($scope,$http,services, $route) {
         $scope.message = 'Everyone come and see how good I look!';
         services.getFilms().then(function(data){
             $scope.films = data.data;
