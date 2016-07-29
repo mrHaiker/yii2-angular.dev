@@ -15,6 +15,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/angular-loading-bar/build/loading-bar.min.css">
     <title>Document</title>
 </head>
 <body ng-controller="index">
@@ -45,14 +46,13 @@
     <script src="assets/angular/angular.min.js"></script>
     <script src="assets/angular-route/angular-route.min.js"></script>
     <script src="assets/angular-resource/angular-resource.min.js"></script>
+    <script src="assets/angular-loading-bar/build/loading-bar.min.js"></script>
     <!-- Подключаем модули приложения -->
     <script src="app.js"></script>
     <!-- Модели -->
     <script src="models/film.js"></script>
     <script src="models/User.js"></script>
     <script src="models/AuthInterceptor.js"></script>
-
-
 
     <script src="controllers/site.js"></script>
     <script src="controllers/film.js"></script>
