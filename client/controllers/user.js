@@ -1,25 +1,43 @@
 
-yii2AngApp_user.config( function ($routeProvider) {
-    $routeProvider
-        .when('/user', {
+yii2AngApp.config( function ($routeProvider, $stateProvider, $urlRouterProvider) {
+    // $routeProvider
+    //     .when('/user', {
+    //         templateUrl: 'views/user/index.html',
+    //         controller: 'mainUserCtrl'
+    //     })
+    //     .when('/user/register', {
+    //         templateUrl: 'views/user/reg.html',
+    //         controller: 'registerUserCtrl'
+    //     })
+    //     .when('/user/login', {
+    //         templateUrl: 'views/user/login.html',
+    //         controller: 'loginUserCtrl'
+    //     });
+    $stateProvider
+        .state('user', {
+            url: '/client/user',
             templateUrl: 'views/user/index.html',
-            controller: 'mainUserCtrl'
+            controller: 'mainUserCtrl',
+            ncyBreadcrumb: {
+                label: 'User'
+            }
         })
-        .when('/user/register', {
+        .state('user/register', {
+            url: '/client/user/register',
             templateUrl: 'views/user/reg.html',
-            controller: 'registerUserCtrl'
-        })
-        .when('/user/login', {
-            templateUrl: 'views/user/login.html',
-            controller: 'loginUserCtrl'
+            controller: 'registerUserCtrl',
+            ncyBreadcrumb: {
+                label: 'Register'
+            }
         })
 
+
 });
-yii2AngApp_user.controller('mainUserCtrl', function ($scope) {
+yii2AngApp.controller('mainUserCtrl', function ($scope) {
     $scope.msg = 'controller connect';
 });
 
-yii2AngApp_user.controller('registerUserCtrl', function ($scope, User) {
+yii2AngApp.controller('registerUserCtrl', function ($scope, User) {
     $scope.msg = 'done'
     $scope.data = {}
     $scope.register = function () {
@@ -32,7 +50,7 @@ yii2AngApp_user.controller('registerUserCtrl', function ($scope, User) {
     }
 });
 
-yii2AngApp_user.controller('loginUserCtrl', function ($scope, User, $window, $location) {
+yii2AngApp.controller('loginUserCtrl', function ($scope, User, $window, $location) {
     $scope.data = {};
     $scope.login = function () {
         User.login($scope.data, function (data, req) {

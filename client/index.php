@@ -11,6 +11,7 @@
 <html lang="en" ng-app="yii2AngApp">
 <head>
     <meta charset="UTF-8">
+    <base href="/client/">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,15 +26,15 @@
                 <a class="navbar-brand" href="#/">Одностраничное приложение</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/"><i class="glyphicon glyphicon-home"></i> Главная</a></li>
-                <li><a href="#/film/index"><i class="glyphicon glyphicon-film"></i> Каталог фильмов</a></li>
-                <li><a href="#/user"><i class="glyphicon glyphicon-user"></i> Пользователь</a></li>
+                <li><a href="/client/"><i class="glyphicon glyphicon-home"></i> Главная</a></li>
+                <li><a href="/client/film/index"><i class="glyphicon glyphicon-film"></i> Каталог фильмов</a></li>
+                <li><a href="/client/user"><i class="glyphicon glyphicon-user"></i> Пользователь</a></li>
             </ul>
         </div>
     </nav>
     <div id="main" class="container">
         <!-- Здесь будет динамическое содержимое -->
-        <div ng-view></div>
+        <div ui-view></div>
     </div>
 
     <footer class="text-center">
@@ -47,6 +48,8 @@
     <script src="assets/angular-route/angular-route.min.js"></script>
     <script src="assets/angular-resource/angular-resource.min.js"></script>
     <script src="assets/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="assets/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="assets/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
     <!-- Подключаем модули приложения -->
     <script src="app.js"></script>
     <!-- Модели -->

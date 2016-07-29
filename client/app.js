@@ -1,6 +1,6 @@
 'use strict';
 // Ссылка на серверную часть приложения
-var serviceBase = 'http://yii2-angular.dev/server/web';
+var serviceBase = 'http://yii2-angular.dev:3000/server/web';
 // Основной модуль приложения и его компоненты
 // рабочий модуль
 var yii2AngApp = angular.module('yii2AngApp', [
@@ -8,12 +8,13 @@ var yii2AngApp = angular.module('yii2AngApp', [
     'angular-loading-bar',
     'yii2AngApp.site',
     'yii2AngApp.film',
-    'yii2AngApp.user'
-]).config(function ($httpProvider, $routeProvider) {
-    $routeProvider.otherwise({
-        redirectTo: '/film/index'
-    });
+    'yii2AngApp.user',
+    'ui.router',
+    'ncy-angular-breadcrumb'
+]).config(function ($httpProvider, $routeProvider, $locationProvider) {
+    
     $httpProvider.interceptors.push('AuthInterceptor');
+    $locationProvider.html5Mode(true);
 });
 // рабочий модуль
 var yii2AngApp_site = angular.module('yii2AngApp.site', ['ngRoute']);

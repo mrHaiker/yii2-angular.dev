@@ -13,9 +13,6 @@ yii2AngApp_site.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/site/contact.html',
             controller: 'contact'
         })
-        .otherwise({
-            redirectTo: '/site/index'
-        });
 }])
     .controller('index', ['$scope', '$http', function($scope,$http) {
         // Сообщение для отображения представлением
