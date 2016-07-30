@@ -33,7 +33,9 @@
         </div>
     </nav>
     <div id="main" class="container">
+        <div ncy-breadcrumb></div>
         <!-- Здесь будет динамическое содержимое -->
+        <div ng-view></div>
         <div ui-view></div>
     </div>
 
@@ -57,7 +59,6 @@
     <script src="models/User.js"></script>
     <script src="models/AuthInterceptor.js"></script>
 
-    <script src="controllers/site.js"></script>
     <script src="controllers/film.js"></script>
     <script src="controllers/user.js"></script>
 </body>
